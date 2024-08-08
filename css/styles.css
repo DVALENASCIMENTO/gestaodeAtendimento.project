@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 600px;
+    margin: 20px auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    animation: fadeIn 2s;
+    color: #333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    width: 45%;
+    margin: 10px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    background: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+li:hover {
+    background: #e0e0e0;
+}
+
+li input {
+    border: none;
+    background: transparent;
+    font-size: 1em;
+    flex: 1;
+    margin-right: 10px;
+}
+
+li .edit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.popup button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background: #6a11cb;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup button:hover {
+    background: #2575fc;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer a {
+    color: #6a11cb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .boxes {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .box {
+        width: 45%;
+    }
+}
+
+.drop-zone {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px dashed #ffffff;
+    border-radius: 10px;
+    background: rgba(246, 246, 246, 0.1);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.drop-zone.hover {
+    background: rgba(106, 17, 203, 0.2);
+}
+
+/* Estilos para o popup da taxa de conversão */
+#conversionPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conversion-btn {
+    float: right; /* Faz o botão flutuar à direita */
+    margin-top: 20px; /* Adiciona um espaço acima do botão */
+    padding: 10px; /* Define o espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    background: #6a11cb; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor como ponteiro */
+    transition: background 0.3s; /* Transição de cor de fundo */
+}
+
+.conversion-btn:hover {
+    background: #2575fc; /* Cor de fundo ao passar o mouse */
+}
