@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Vendas</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Verifique se o caminho para o CSS está correto -->
+</head>
+<body>
+    <div class="container">
+        <h1>Gestão de Atendimento</h1>
+        <div class="boxes">
+            <div class="box">
+                <h2>Lista de Espera</h2>
+                <ul id="waitingList"></ul>
+                <button onclick="addSeller()">Adicionar Vendedor</button>
+            </div>
+            <div class="box">
+                <h2>Lista de Atendimento</h2>
+                <ul id="serviceList"></ul>
+            </div>
+        </div>
+        <button class="conversion-btn" onclick="showConversionRate()">Taxa de Conversão</button>
+    </div>
+
+    <div id="popup" class="popup" style="display:none;">
+        <h3>Selecione o Resultado do Atendimento</h3>
+        <button onclick="handleResult('success')">Sucesso</button>
+        <button onclick="handleResult('notConverted')">Não convertido</button>
+        <button onclick="handleResult('exchange')">Troca</button>
+    </div>
+
+    <div id="conversionPopup" class="popup" style="display:none;">
+        <h3>Taxa de Conversão</h3>
+        <div id="conversionRates"></div>
+        <button onclick="closeConversionPopup()">Fechar</button>
+    </div>
+
+    <div id="dropZone" class="drop-zone" style="height: 50px; border: 1px dashed red; text-align: center; padding: 10px;">
+        Arraste o vendedor aqui para excluir
+    </div>
+    
+    <footer>
+        <p>Diego Vale do Nascimento - Analista e Desenvolvedor de Sistemas</p>
+        <p>
+            <a href="https://www.linkedin.com/in/diego-vale-do-nascimento-48212215b/" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/DVALENASCIMENTO" target="_blank">GitHub</a>
+        </p>
+    </footer>
+
+    <script src="js/script.js"></script> <!-- Verifique se o caminho para o JavaScript está correto -->
+</body>
+</html>
