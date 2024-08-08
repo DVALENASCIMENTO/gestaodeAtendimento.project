@@ -31,6 +31,23 @@ function renderList() {
             draggedSellerIndex = index; 
         };
 
+        // Adicionando eventos de toque
+        li.ontouchstart = (e) => {
+            e.preventDefault(); // Evita o comportamento padrão
+            draggedSellerIndex = index; // Define o índice do vendedor
+            li.classList.add('dragging'); // Classe para adicionar estilo visual
+        };
+
+        li.ontouchmove = (e) => {
+            e.preventDefault(); // Evita o comportamento padrão
+            // Aqui você pode adicionar lógica para arrastar visualmente se necessário
+        };
+
+        li.ontouchend = () => {
+            li.classList.remove('dragging'); // Remove a classe ao soltar
+            dropZone.dispatchEvent(new Event('drop')); // Chamando a função de exclusão
+        };
+
         const input = document.createElement('input');
         input.type = 'text';
         input.value = seller;
@@ -64,7 +81,7 @@ function renderList() {
         li.appendChild(input);
         
         const editBtn = document.createElement('button');
-        editBtn.innerHTML = '✏️';
+        editBtn.innerHTML = '';
         editBtn.classList.add('edit-btn');
         editBtn.onclick = (e) => {
             e.stopPropagation();
@@ -163,6 +180,7 @@ dropZone.addEventListener('drop', () => {
     }
 });
 
+// Inicia a renderização da lista ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
     renderList();
 });
