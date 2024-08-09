@@ -124,7 +124,6 @@ function moveToService(seller) {
     if (index > -1) {
         sellers.splice(index, 1);
         serviceSellers.push(seller);
-        // Não contabiliza atendimentos aqui
         saveSellers();
         renderList();
     }
@@ -140,20 +139,16 @@ function handleResult(result) {
     const index = serviceSellers.indexOf(currentSeller);
     if (index > -1) {
         serviceSellers.splice(index, 1);
-        
-        // O vendedor é retornado à lista de espera
         sellers.unshift(currentSeller); // Adiciona no topo da lista
         
         // Atualiza dados de conversão
         if (conversionData[currentSeller]) {
             if (result === 'success') {
-                conversionData[currentSeller].totalAtendimentos += 1; // Incrementa atendimentos para "Sucesso"
-                conversionData[currentSeller].vendas += 1; // Incrementa vendas para "Sucesso"
+                conversionData[currentSeller].totalAtendimentos += 1; 
+                conversionData[currentSeller].vendas += 1; 
             } else if (result === 'notConverted') {
-                conversionData[currentSeller].totalAtendimentos += 1; // Incrementa atendimentos para "Não convertido"
-                // Não incrementa vendas para "Não convertido"
+                conversionData[currentSeller].totalAtendimentos += 1;
             }
-            // Para "Troca", não altera atendimentos ou vendas
         }
 
         saveSellers();
